@@ -1,0 +1,27 @@
+version: 2
+
+references:
+  circleci_docker_primary: &circleci_docker_primary trussworks/circleci-docker-primary:2f6321ed86ed79bfed23b04dd6dfdbe7bc943fdc
+
+jobs:
+  test:
+    docker:
+      - image: *circleci_docker_primary
+        environment:
+          - TEST_RESULTS: /tmp/test-results
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - pre-commit-dot-cache-{{ checksum ".pre-commit-config.yaml" }}
+      - run: make test
+      - save_cache:
+          key: pre-commit-dot-cache-{{ checksum ".pre-commit-config.yaml" }}
+          paths:
+            - "~/.cache/pre-commit"
+
+workflows:
+  version: 2
+  validate:
+    jobs:
+      - test
