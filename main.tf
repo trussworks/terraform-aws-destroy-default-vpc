@@ -8,7 +8,7 @@ resource "aws_default_vpc" "default" {
 
 
 resource "aws_default_subnet" "default_azs" {
-  count = length(var.azs)
+  count             = length(var.azs)
   availability_zone = "${var.region}${var.azs[count.index]}"
 
   tags = {

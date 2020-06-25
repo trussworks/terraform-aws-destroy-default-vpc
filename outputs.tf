@@ -15,7 +15,7 @@ output "security_group" {
 
 output "subnets" {
   description = "The Default Subnets"
-  value = "aws_default_subnet.default_azs"
+  value       = "aws_default_subnet.default_azs"
 }
 
 output "vpc" {
