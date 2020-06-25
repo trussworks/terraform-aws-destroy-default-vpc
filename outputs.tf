@@ -15,12 +15,7 @@ output "security_group" {
 
 output "subnets" {
   description = "The Default Subnets"
-  value = [
-    aws_default_subnet.default_az1,
-    aws_default_subnet.default_az2,
-    aws_default_subnet.default_az3,
-    aws_default_subnet.default_az4,
-  ]
+  value = "aws_default_subnet.default_azs"
 }
 
 output "vpc" {
