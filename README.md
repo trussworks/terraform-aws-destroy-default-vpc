@@ -11,6 +11,12 @@ Resources supported:
 - [aws_default_vpc](https://www.terraform.io/docs/providers/aws/r/default_vpc.html)
 - [aws_default_vpc_dhcp_options](https://www.terraform.io/docs/providers/aws/r/default_vpc_dhcp_options.html)
 
+**WARNING:** The management of default VPC resources in AWS is meant to close security holes and follow best
+practices. If you have an architecture that relies on default VPC resources **DO NOT** use this module until those
+resources have been moved to non-default resources. Once you apply this module to your architecture it is
+incredibly hard to undo as simply removing the module will not "reset" any changes made by the module. Please
+read the linked terraform docs above for more information about managing default resources.
+
 ## Terraform Versions
 
 Terraform 0.12. Pin module version to ~> 1.0.0 . Submit pull-requests to master branch.
