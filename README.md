@@ -34,36 +34,35 @@ module "default_vpc" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-
 ## Requirements
 
-| Name      | Version   |
-| --------- | --------- |
+| Name | Version |
+|------|---------|
 | terraform | ~> 0.12.0 |
 
 ## Providers
 
 | Name | Version |
-| ---- | ------- |
-| aws  | n/a     |
+|------|---------|
+| aws | n/a |
 
 ## Inputs
 
-| Name   | Description                                                    | Type     | Default                                              | Required |
-| ------ | -------------------------------------------------------------- | -------- | ---------------------------------------------------- | :------: |
-| azs    | List of AZs to manage using only the letters, not full AZ name | `list`   | <pre>[<br> "a",<br> "b",<br> "c",<br> "d"<br>]</pre> |    no    |
-| region | AWS Region                                                     | `string` | `"us-west-2"`                                        |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| azs | List of AZs to manage using only the letters, not full AZ name | `list` | <pre>[<br>  "a",<br>  "b",<br>  "c",<br>  "d"<br>]</pre> | no |
+| region | AWS Region | `string` | `"us-west-2"` | no |
 
 ## Outputs
 
-| Name             | Description                      |
-| ---------------- | -------------------------------- |
-| network_acl      | The Default Network ACL          |
-| route_table      | The Default Route Table          |
-| security_group   | The Default Security Group       |
-| subnets          | The Default Subnets              |
-| vpc              | The Default VPC                  |
-| vpc_dhcp_options | The Default VPC DHCP Options Set |
+| Name | Description |
+|------|-------------|
+| network\_acl | The Default Network ACL |
+| route\_table | The Default Route Table |
+| security\_group | The Default Security Group |
+| subnets | The Default Subnets |
+| vpc | The Default VPC |
+| vpc\_dhcp\_options | The Default VPC DHCP Options Set |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
