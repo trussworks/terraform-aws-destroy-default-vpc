@@ -28,7 +28,7 @@ Terraform 0.11 was never supported.
 ```hcl
 # Allows all services to log to bucket
 module "default_vpc" {
-  source = "trussworks/default-vpc/aws"
+  source = "trussworks/destroy-default-vpc/aws"
   region = "us-west-2"
 }
 ```
