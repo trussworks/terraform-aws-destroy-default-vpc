@@ -1,4 +1,4 @@
-Supports management of all default networking resources in an AWS account. Use this module to lock down those
+Supports management of all default networking resources in an AWS region. Use this module to lock down those
 resource by removing ingress/egress rules for the default network ACL and the ingress/egress rules for the default
 security group rules. These resources are special so please read the accompanying documentation below.
 
@@ -32,6 +32,16 @@ Terraform 0.11 was never supported.
 module "default_vpc" {
   source = "trussworks/destroy-default-vpc/aws"
   region = "us-west-2"
+}
+```
+An example that will apply to all regions in an account:
+```hcl
+data "aws_regions" "current" {}
+
+module "default_vpc" {
+  source = "trussworks/destroy-default-vpc/aws"
+  for_each = toset(data.aws_regions.current.names)
+  region = each.value
 }
 ```
 
