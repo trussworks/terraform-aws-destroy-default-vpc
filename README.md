@@ -33,7 +33,9 @@ module "default_vpc" {
   region = "us-west-2"
 }
 ```
+
 An example that will apply to all regions in an account:
+
 ```hcl
 data "aws_regions" "current" {}
 
