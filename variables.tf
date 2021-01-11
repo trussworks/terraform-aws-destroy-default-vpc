@@ -9,3 +9,4 @@ variable "azs" {
   type        = list
   default     = ["a", "b", "c", "d"]
 }
+ 
