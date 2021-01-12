@@ -51,7 +51,7 @@ module "default_vpc" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13.0 |
+| terraform | >= 0.13 |
 | aws | >= 3.0 |
 
 ## Providers
