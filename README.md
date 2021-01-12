@@ -64,7 +64,7 @@ module "default_vpc" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| azs | List of AZs to manage using only the letters, not full AZ name | `list` | <pre>[<br>  "a",<br>  "b",<br>  "c",<br>  "d"<br>]</pre> | no |
+| azs | List of AZs to manage using only the letters, not full AZ name | `list(string)` | <pre>[<br>  "a",<br>  "b",<br>  "c",<br>  "d"<br>]</pre> | no |
 | region | AWS Region | `string` | `"us-west-2"` | no |
 
 ## Outputs
