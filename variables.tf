@@ -3,9 +3,8 @@ variable "region" {
   type        = string
   default     = "us-west-2"
 }
-
 variable "azs" {
   description = "List of AZs to manage using only the letters, not full AZ name"
-  type        = list
+  type        = list(string)
   default     = ["a", "b", "c", "d"]
 }

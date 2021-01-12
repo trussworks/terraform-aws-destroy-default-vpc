@@ -19,11 +19,10 @@ read the linked terraform docs above for more information about managing default
 
 ## Terraform Versions
 
-Terraform 0.12. Pin module version to ~> 2.X . Submit pull-requests to master branch.
+Terraform 0.13 and newer. Pin module version to ~> 2.X . Submit pull-requests to master branch.
 
 Terraform 0.12. Pin module version to ~> 1X . Submit pull-requests to terraform012 branch.
 
-Terraform 0.11 was never supported.
 
 ## Usage
 
@@ -34,7 +33,9 @@ module "default_vpc" {
   region = "us-west-2"
 }
 ```
+
 An example that will apply to all regions in an account:
+
 ```hcl
 data "aws_regions" "current" {}
 
@@ -50,20 +51,20 @@ module "default_vpc" {
 
 | Name | Version |
 |------|---------|
-| terraform | ~> 0.13.0 |
-| aws | ~> 3.0 |
+| terraform | >= 0.13 |
+| aws | >= 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3.0 |
+| aws | >= 3.0 |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| azs | List of AZs to manage using only the letters, not full AZ name | `list` | <pre>[<br>  "a",<br>  "b",<br>  "c",<br>  "d"<br>]</pre> | no |
+| azs | List of AZs to manage using only the letters, not full AZ name | `list(string)` | <pre>[<br>  "a",<br>  "b",<br>  "c",<br>  "d"<br>]</pre> | no |
 | region | AWS Region | `string` | `"us-west-2"` | no |
 
 ## Outputs
