@@ -1,9 +1,8 @@
 resource "aws_default_vpc" "default" {
 
-  tags = {
-    Automation = "terraform"
-    Name       = "default"
-  }
+  tags = merge(var.tags, {
+    Name = "default",
+  })
 }
 
 
@@ -11,10 +10,9 @@ resource "aws_default_subnet" "default_azs" {
   count             = length(var.azs)
   availability_zone = "${var.region}${var.azs[count.index]}"
 
-  tags = {
-    Automation = "terraform"
-    Name       = "Default subnet for ${var.region}${var.azs[count.index]}"
-  }
+  tags = merge(var.tags, {
+    Name = format("Default subnet for %s%s", var.region, var.azs[count.index]),
+  })
 }
 
 resource "aws_default_network_acl" "default" {
@@ -24,10 +22,9 @@ resource "aws_default_network_acl" "default" {
 
   subnet_ids = aws_default_subnet.default_azs.*.id
 
-  tags = {
-    Automation = "terraform"
-    Name       = "default"
-  }
+  tags = merge(var.tags, {
+    Name = "default",
+  })
 }
 
 resource "aws_default_route_table" "default" {
@@ -35,10 +32,9 @@ resource "aws_default_route_table" "default" {
 
   default_route_table_id = aws_default_vpc.default.default_route_table_id
 
-  tags = {
-    Automation = "terraform"
-    Name       = "default"
-  }
+  tags = merge(var.tags, {
+    Name = "default",
+  })
 }
 
 resource "aws_default_security_group" "default" {
@@ -46,17 +42,15 @@ resource "aws_default_security_group" "default" {
 
   vpc_id = aws_default_vpc.default.id
 
-  tags = {
-    Automation = "terraform"
-    Name       = "default"
-  }
+  tags = merge(var.tags, {
+    Name = "default",
+  })
 }
 
 resource "aws_default_vpc_dhcp_options" "default" {
   depends_on = [aws_default_vpc.default]
 
-  tags = {
-    Automation = "terraform"
-    Name       = "default"
-  }
+  tags = merge(var.tags, {
+    Name = "default",
+  })
 }
