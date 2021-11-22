@@ -51,33 +51,47 @@ module "default_vpc" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.13 |
-| aws | >= 3.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | >= 3.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_default_network_acl.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_network_acl) | resource |
+| [aws_default_route_table.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_route_table) | resource |
+| [aws_default_security_group.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_security_group) | resource |
+| [aws_default_subnet.default_azs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_subnet) | resource |
+| [aws_default_vpc.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_vpc) | resource |
+| [aws_default_vpc_dhcp_options.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_vpc_dhcp_options) | resource |
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| azs | List of AZs to manage using only the letters, not full AZ name | `list(string)` | <pre>[<br>  "a",<br>  "b",<br>  "c",<br>  "d"<br>]</pre> | no |
-| region | AWS Region | `string` | `"us-west-2"` | no |
+| <a name="input_azs"></a> [azs](#input\_azs) | List of AZs to manage using only the letters, not full AZ name | `list(string)` | <pre>[<br>  "a",<br>  "b",<br>  "c",<br>  "d"<br>]</pre> | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| network\_acl | The Default Network ACL |
-| route\_table | The Default Route Table |
-| security\_group | The Default Security Group |
-| subnets | The Default Subnets |
-| vpc | The Default VPC |
-| vpc\_dhcp\_options | The Default VPC DHCP Options Set |
-
+| <a name="output_network_acl"></a> [network\_acl](#output\_network\_acl) | The Default Network ACL |
+| <a name="output_route_table"></a> [route\_table](#output\_route\_table) | The Default Route Table |
+| <a name="output_security_group"></a> [security\_group](#output\_security\_group) | The Default Security Group |
+| <a name="output_subnets"></a> [subnets](#output\_subnets) | The Default Subnets |
+| <a name="output_vpc"></a> [vpc](#output\_vpc) | The Default VPC |
+| <a name="output_vpc_dhcp_options"></a> [vpc\_dhcp\_options](#output\_vpc\_dhcp\_options) | The Default VPC DHCP Options Set |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Upgrade Paths
