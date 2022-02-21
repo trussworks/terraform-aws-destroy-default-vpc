@@ -4,12 +4,12 @@ security group rules. These resources are special so please read the accompanyin
 
 Resources supported:
 
-- [aws_default_network_acl](https://www.terraform.io/docs/providers/aws/r/default_network_acl.html)
-- [aws_default_route_table](https://www.terraform.io/docs/providers/aws/r/default_route_table.html)
-- [aws_default_security_group](https://www.terraform.io/docs/providers/aws/r/default_security_group.html)
-- [aws_default_subnet](https://www.terraform.io/docs/providers/aws/r/default_subnet.html)
-- [aws_default_vpc](https://www.terraform.io/docs/providers/aws/r/default_vpc.html)
-- [aws_default_vpc_dhcp_options](https://www.terraform.io/docs/providers/aws/r/default_vpc_dhcp_options.html)
+- [aws_default_network_acl](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_network_acl)
+- [aws_default_route_table](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_route_table)
+- [aws_default_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_security_group)
+- [aws_default_subnet](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_subnet)
+- [aws_default_vpc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_vpc)
+- [aws_default_vpc_dhcp_options](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_vpc_dhcp_options)
 
 **WARNING:** The management of default VPC resources in AWS is meant to close security holes and follow best
 practices. If you have an architecture that relies on default VPC resources **DO NOT** use this module until those
