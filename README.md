@@ -30,7 +30,6 @@ Terraform 0.12. Pin module version to ~> 1X . Submit pull-requests to terraform0
 # Allows all services to log to bucket
 module "default_vpc" {
   source = "trussworks/destroy-default-vpc/aws"
-  region = "us-west-2"
 }
 ```
 
