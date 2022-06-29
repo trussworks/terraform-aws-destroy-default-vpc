@@ -1,25 +1,25 @@
 jobs:
   test:
     docker:
-    - auth:
-        password: $DOCKER_PASSWORD
-        username: $DOCKER_USERNAME
-      image: trussworks/circleci:efb1042e31538677779971798e0912390f699e72
+      - auth:
+          password: $DOCKER_PASSWORD
+          username: $DOCKER_USERNAME
+        image: trussworks/circleci:c22eec999160eb6e83e7d6c82d5c2e264c7c3475
     steps:
-    - checkout
-    - restore_cache:
-        keys:
-        - pre-commit-dot-cache-{{ checksum ".pre-commit-config.yaml" }}
-    - run: make test
-    - save_cache:
-        key: pre-commit-dot-cache-{{ checksum ".pre-commit-config.yaml" }}
-        paths:
-        - ~/.cache/pre-commit
+      - checkout
+      - restore_cache:
+          keys:
+            - pre-commit-dot-cache-{{ checksum ".pre-commit-config.yaml" }}
+      - run: make test
+      - save_cache:
+          key: pre-commit-dot-cache-{{ checksum ".pre-commit-config.yaml" }}
+          paths:
+            - ~/.cache/pre-commit
 version: 2.1
 workflows:
   validate:
     jobs:
-    - test:
-        context:
-        - org-global
+      - test:
+          context:
+            - org-global
   version: 2.1
