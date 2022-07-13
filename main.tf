@@ -1,5 +1,3 @@
-data "aws_region" "current" {}
-
 resource "aws_default_vpc" "default" {
 
   tags = {
@@ -8,14 +6,15 @@ resource "aws_default_vpc" "default" {
   }
 }
 
+data "aws_region" "current" {}
 
 resource "aws_default_subnet" "default_azs" {
   count             = length(var.azs)
-  availability_zone = "${data.aws_region}${var.azs[count.index]}"
+  availability_zone = "${data.aws_region.current.name}${var.azs[count.index]}"
 
   tags = {
     Automation = "terraform"
-    Name       = "Default subnet for ${data.aws_region}${var.azs[count.index]}"
+    Name       = "Default subnet for ${data.aws_region.current.name}${var.azs[count.index]}"
   }
 }
 
