@@ -1,4 +1,6 @@
-Supports management of all default networking resources in an AWS region. Use this module to lock down those
+# DEPRECIATION NOTICE
+This module has been deprecated and is no longer maintained. Should you need to continue to use it, please fork the repository. Thank you.
+ Supports management of all default networking resources in an AWS region. Use this module to lock down those
 resource by removing ingress/egress rules for the default network ACL and the ingress/egress rules for the default
 security group rules. These resources are special so please read the accompanying documentation below.
 
